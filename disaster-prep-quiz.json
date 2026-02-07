@@ -1,0 +1,454 @@
+{
+  "keyword": "disaster-prep-2026",
+  "title": "Disaster Preparedness Quiz",
+  "description": "Are you ready for an emergency? Take the 5-minute quiz and find out.",
+  "questions": [
+    {
+      "id": 1,
+      "category": "Water",
+      "question": "Do you have at least 1 gallon of water per person per day for 3 days stored?",
+      "choices": [
+        "Yes, I have 3+ days of water stored",
+        "I have 1-2 days of water stored",
+        "I have some water but not enough",
+        "No, I rely on tap water only"
+      ],
+      "correct": 0,
+      "explanation": "FEMA recommends storing at least 1 gallon per person per day for at least 3 days. This covers drinking and sanitation needs.",
+      "products": [
+        {
+          "name": "WaterBrick Stackable Water Storage Container (3.5 Gallon, 4-Pack)",
+          "amazonUrl": "https://amazon.com/dp/B00GMTPZU8",
+          "price": "$99.99",
+          "commission": "~$6"
+        },
+        {
+          "name": "Aqua-Tainer Water Container (7 Gallon)",
+          "amazonUrl": "https://amazon.com/dp/B001QC31G6",
+          "price": "$19.99",
+          "commission": "~$1.20"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "category": "Water",
+      "question": "Do you have a water filter or purification tablets for emergency use?",
+      "choices": [
+        "Yes, I have a filter AND tablets",
+        "I have one or the other",
+        "I have bleach for purification",
+        "No, I don't have any water purification method"
+      ],
+      "correct": 0,
+      "explanation": "Having multiple water purification methods ensures you can make water safe to drink if your stored supply runs out.",
+      "products": [
+        {
+          "name": "LifeStraw Personal Water Filter",
+          "amazonUrl": "https://amazon.com/dp/B006QF3TW4",
+          "price": "$19.95",
+          "commission": "~$1.20"
+        },
+        {
+          "name": "Potable Aqua Water Purification Tablets (50 count)",
+          "amazonUrl": "https://amazon.com/dp/B001949TKS",
+          "price": "$8.99",
+          "commission": "~$0.54"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "category": "Water",
+      "question": "Do you know how to shut off your home's water main?",
+      "choices": [
+        "Yes, and I've practiced it",
+        "Yes, but I've never actually done it",
+        "I know where it is but not how to shut it off",
+        "No, I don't know where it is"
+      ],
+      "correct": 0,
+      "explanation": "Knowing how to shut off your water main can prevent flooding in case of broken pipes during a disaster."
+    },
+    {
+      "id": 4,
+      "category": "Food",
+      "question": "Do you have at least 3 days of non-perishable food stored?",
+      "choices": [
+        "Yes, 3+ days for everyone in household",
+        "I have 1-2 days of food",
+        "I have some canned goods but not organized",
+        "No, I shop frequently and keep minimal food"
+      ],
+      "correct": 0,
+      "explanation": "FEMA recommends a minimum 3-day supply of non-perishable food that requires no refrigeration or cooking.",
+      "products": [
+        {
+          "name": "Augason Farms 30-Day Emergency Food Supply",
+          "amazonUrl": "https://amazon.com/dp/B07QYJSVQN",
+          "price": "$199.99",
+          "commission": "~$12"
+        },
+        {
+          "name": "Mountain House Classic Bucket (24 servings)",
+          "amazonUrl": "https://amazon.com/dp/B084PNQ89K",
+          "price": "$99.99",
+          "commission": "~$6"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "category": "Food",
+      "question": "Do you have a manual can opener?",
+      "choices": [
+        "Yes, and I know where it is",
+        "Yes, but I'm not sure where it is",
+        "No, I only have an electric can opener",
+        "I don't store canned food"
+      ],
+      "correct": 0,
+      "explanation": "Electric can openers won't work during a power outage. A manual can opener is essential for accessing canned emergency food.",
+      "products": [
+        {
+          "name": "OXO Good Grips Smooth Edge Can Opener",
+          "amazonUrl": "https://amazon.com/dp/B00004OCNJ",
+          "price": "$24.99",
+          "commission": "~$1.50"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "category": "Food",
+      "question": "Do you have special dietary needs covered (baby formula, pet food, medications)?",
+      "choices": [
+        "Yes, all special needs covered for 3+ days",
+        "Partially covered",
+        "Not covered but not needed",
+        "No, haven't thought about this"
+      ],
+      "correct": 0,
+      "explanation": "Don't forget about infants, pets, and anyone with dietary restrictions or medical needs when planning emergency supplies."
+    },
+    {
+      "id": 7,
+      "category": "Shelter",
+      "question": "Do you have blankets or sleeping bags for each person in your household?",
+      "choices": [
+        "Yes, one per person minimum",
+        "We have some but not enough",
+        "We have regular bedding only",
+        "No emergency bedding stored"
+      ],
+      "correct": 0,
+      "explanation": "Emergency blankets or sleeping bags can keep you warm if heating fails or you need to evacuate.",
+      "products": [
+        {
+          "name": "Teton Sports Celsius XL Sleeping Bag",
+          "amazonUrl": "https://amazon.com/dp/B000ETWBXS",
+          "price": "$49.99",
+          "commission": "~$3"
+        },
+        {
+          "name": "Emergency Mylar Thermal Blankets (10-Pack)",
+          "amazonUrl": "https://amazon.com/dp/B07GLCYR1P",
+          "price": "$11.99",
+          "commission": "~$0.72"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "category": "Shelter",
+      "question": "Do you have tarps or emergency shelter materials?",
+      "choices": [
+        "Yes, multiple tarps and rope/cord",
+        "I have one tarp",
+        "I have a camping tent",
+        "No emergency shelter materials"
+      ],
+      "correct": 0,
+      "explanation": "Tarps are versatile for creating temporary shelter, covering broken windows, or protecting belongings.",
+      "products": [
+        {
+          "name": "B-Air Grizzly Tarps (12x16 ft, 2-Pack)",
+          "amazonUrl": "https://amazon.com/dp/B01EVGUEF8",
+          "price": "$39.99",
+          "commission": "~$2.40"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "category": "Shelter",
+      "question": "Do you know how to turn off your home's gas and electricity?",
+      "choices": [
+        "Yes, and I've practiced both",
+        "I know how but haven't practiced",
+        "I know where the controls are",
+        "No, I don't know how"
+      ],
+      "correct": 0,
+      "explanation": "Knowing how to shut off utilities can prevent fires, explosions, and electrocution after a disaster."
+    },
+    {
+      "id": 10,
+      "category": "Communications",
+      "question": "Do you have a battery-powered or hand-crank emergency radio?",
+      "choices": [
+        "Yes, with extra batteries or hand-crank",
+        "Yes, but no extra batteries",
+        "No, I rely on my phone",
+        "No radio at all"
+      ],
+      "correct": 0,
+      "explanation": "Cell networks often fail during disasters. An emergency radio ensures you can receive critical weather and emergency alerts.",
+      "products": [
+        {
+          "name": "Midland ER310 Emergency Crank Weather Radio",
+          "amazonUrl": "https://amazon.com/dp/B07KYFR96H",
+          "price": "$59.99",
+          "commission": "~$3.60"
+        },
+        {
+          "name": "FosPower Emergency Solar Hand Crank Radio",
+          "amazonUrl": "https://amazon.com/dp/B08MVWPX51",
+          "price": "$29.99",
+          "commission": "~$1.80"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "category": "Communications",
+      "question": "Do you have a written emergency contact list (not just stored in your phone)?",
+      "choices": [
+        "Yes, printed and kept with emergency supplies",
+        "Yes, but only in my phone",
+        "I have some numbers memorized",
+        "No written list"
+      ],
+      "correct": 0,
+      "explanation": "If your phone dies or is lost, a written contact list ensures you can still reach family, emergency services, and important contacts."
+    },
+    {
+      "id": 12,
+      "category": "Communications",
+      "question": "Do you have a designated meeting place if your family gets separated?",
+      "choices": [
+        "Yes, both local and out-of-area meeting places",
+        "Yes, one meeting place designated",
+        "We've discussed it casually",
+        "No designated meeting place"
+      ],
+      "correct": 0,
+      "explanation": "Having a predetermined meeting place helps reunite family members when communication systems are down."
+    },
+    {
+      "id": 13,
+      "category": "Medical",
+      "question": "Do you have a well-stocked first aid kit?",
+      "choices": [
+        "Yes, comprehensive kit with supplies for major/minor injuries",
+        "Yes, basic kit with bandages and antiseptic",
+        "I have a few band-aids",
+        "No first aid supplies"
+      ],
+      "correct": 0,
+      "explanation": "A comprehensive first aid kit can treat injuries when medical help is delayed or unavailable.",
+      "products": [
+        {
+          "name": "Lightning X Premium First Aid Kit (300+ pieces)",
+          "amazonUrl": "https://amazon.com/dp/B07MLQLG2L",
+          "price": "$59.99",
+          "commission": "~$3.60"
+        },
+        {
+          "name": "Adventure Medical Kits Mountain Series",
+          "amazonUrl": "https://amazon.com/dp/B000G7WRBC",
+          "price": "$89.99",
+          "commission": "~$5.40"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "category": "Medical",
+      "question": "Do you have at least 7 days of prescription medications stored?",
+      "choices": [
+        "Yes, 7+ days for all needed medications",
+        "I have 3-5 days stored",
+        "I have 1-2 days stored",
+        "No extra medications stored / Not needed"
+      ],
+      "correct": 0,
+      "explanation": "Pharmacies may be closed or inaccessible during disasters. A week's supply gives you time to find alternative sources."
+    },
+    {
+      "id": 15,
+      "category": "Medical",
+      "question": "Do you know CPR or basic first aid?",
+      "choices": [
+        "Yes, I'm trained and current",
+        "I was trained but need a refresher",
+        "I've watched videos but no formal training",
+        "No first aid training"
+      ],
+      "correct": 0,
+      "explanation": "Basic first aid and CPR skills can save lives when professional medical help is delayed.",
+      "products": [
+        {
+          "name": "Red Cross First Aid Training Course",
+          "note": "Check redcross.org for local courses",
+          "price": "$50-$110"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "category": "Power & Light",
+      "question": "Do you have flashlights with extra batteries or hand-crank lights?",
+      "choices": [
+        "Yes, multiple lights with backup power sources",
+        "Yes, one or two flashlights with batteries",
+        "I rely on my phone flashlight",
+        "No flashlights"
+      ],
+      "correct": 0,
+      "explanation": "Multiple light sources ensure you can navigate safely during power outages.",
+      "products": [
+        {
+          "name": "Anker Rechargeable Bolder LC40 Flashlight",
+          "amazonUrl": "https://amazon.com/dp/B01FWQSZWS",
+          "price": "$25.99",
+          "commission": "~$1.56"
+        },
+        {
+          "name": "Energizer LED Lantern",
+          "amazonUrl": "https://amazon.com/dp/B074W5JGF2",
+          "price": "$19.99",
+          "commission": "~$1.20"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "category": "Power & Light",
+      "question": "Do you have a backup power source (generator, solar charger, or power bank)?",
+      "choices": [
+        "Yes, multiple backup options",
+        "Yes, one backup option",
+        "I've thought about it but haven't purchased",
+        "No backup power"
+      ],
+      "correct": 0,
+      "explanation": "Backup power keeps critical devices charged and can run essential appliances during extended outages.",
+      "products": [
+        {
+          "name": "Goal Zero Nomad 10 Solar Panel with power bank",
+          "amazonUrl": "https://amazon.com/dp/B07D2QRNP9",
+          "price": "$249.99",
+          "commission": "~$15"
+        },
+        {
+          "name": "Anker PowerHouse 200 Portable Generator",
+          "amazonUrl": "https://amazon.com/dp/B07WMLVFL5",
+          "price": "$249.99",
+          "commission": "~$15"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "category": "Documents",
+      "question": "Do you have copies of important documents in a waterproof container?",
+      "choices": [
+        "Yes, organized and waterproof",
+        "Yes, but not waterproof",
+        "I know where originals are",
+        "No copies made"
+      ],
+      "correct": 0,
+      "explanation": "Copies of insurance, ID, medical records, and financial documents speed recovery after disasters.",
+      "products": [
+        {
+          "name": "SentrySafe Fireproof Waterproof Document Bag",
+          "amazonUrl": "https://amazon.com/dp/B00HYL83KE",
+          "price": "$34.99",
+          "commission": "~$2.10"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "category": "Documents",
+      "question": "Do you have adequate insurance coverage (home, renters, flood)?",
+      "choices": [
+        "Yes, and I review it annually",
+        "Yes, but haven't reviewed in years",
+        "I have basic coverage",
+        "No insurance"
+      ],
+      "correct": 0,
+      "explanation": "Adequate insurance coverage is your financial safety net for rebuilding after a disaster.",
+      "leadGen": {
+        "type": "insurance-comparison",
+        "note": "Get free insurance quotes - we may earn a commission",
+        "estimatedPayout": "$30-$50 per quote"
+      }
+    },
+    {
+      "id": 20,
+      "category": "Skills & Planning",
+      "question": "Have you practiced your emergency plan with your household?",
+      "choices": [
+        "Yes, we practice regularly",
+        "We have a plan but haven't practiced",
+        "We've discussed it informally",
+        "No plan or practice"
+      ],
+      "correct": 0,
+      "explanation": "Practicing your emergency plan ensures everyone knows what to do, reducing panic and confusion during actual emergencies."
+    }
+  ],
+  "scoring": {
+    "ranges": [
+      {
+        "min": 0,
+        "max": 25,
+        "label": "❌ Critical Risk",
+        "color": "#ff4444",
+        "message": "Your preparedness level is critically low. You're vulnerable to even minor disruptions. Start with the essentials: water, food, and a first aid kit."
+      },
+      {
+        "min": 26,
+        "max": 50,
+        "label": "⚠️ High Risk",
+        "color": "#ff9800",
+        "message": "You have some basics, but significant gaps remain. Focus on covering all 5 categories: water, food, shelter, communications, and medical."
+      },
+      {
+        "min": 51,
+        "max": 75,
+        "label": "✅ Moderate Preparedness",
+        "color": "#ffeb3b",
+        "message": "You're on the right track! Fill in the remaining gaps and practice your emergency plan to reach full readiness."
+      },
+      {
+        "min": 76,
+        "max": 90,
+        "label": "🟢 Well Prepared",
+        "color": "#4caf50",
+        "message": "Excellent! You're well-prepared for most emergencies. Keep your supplies fresh and continue practicing your plan."
+      },
+      {
+        "min": 91,
+        "max": 100,
+        "label": "⭐ Expert Level",
+        "color": "#2196f3",
+        "message": "Outstanding! You're an emergency preparedness expert. Consider helping neighbors and community members prepare."
+      }
+    ]
+  }
+}

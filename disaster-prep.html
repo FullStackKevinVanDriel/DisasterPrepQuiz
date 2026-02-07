@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Are You Ready for an Emergency? Take the 5-Minute Quiz</title>
+    <meta name="description" content="Discover your disaster preparedness gaps with our free 5-minute quiz. Get personalized product recommendations to fill your emergency supply gaps.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚨</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .hero {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin: 40px 0;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #333;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .stat-highlight {
+            background: #fff3cd;
+            border-left: 4px solid #ff9800;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        .stat-highlight strong {
+            color: #e65100;
+        }
+
+        .cta-button {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(255,107,107,0.4);
+        }
+
+        .cta-button:hover {
+            background: #ee5a52;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255,107,107,0.6);
+        }
+
+        .quiz-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 20px 0;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            display: none;
+        }
+
+        .quiz-container.active {
+            display: block;
+        }
+
+        .progress-bar {
+            background: #e0e0e0;
+            height: 8px;
+            border-radius: 4px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s;
+        }
+
+        .question {
+            margin-bottom: 30px;
+        }
+
+        .question-category {
+            font-size: 0.9rem;
+            color: #667eea;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .question-text {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .choices {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .choice {
+            background: #f8f9fa;
+            border: 2px solid #e0e0e0;
+            padding: 15px 20px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 1.1rem;
+        }
+
+        .choice:hover {
+            background: #e8eaf6;
+            border-color: #667eea;
+            transform: translateX(5px);
+        }
+
+        .choice.selected {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-next {
+            background: #667eea;
+            color: white;
+            flex: 1;
+        }
+
+        .btn-next:hover {
+            background: #5568d3;
+        }
+
+        .btn-next:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .btn-prev {
+            background: #e0e0e0;
+            color: #333;
+        }
+
+        .btn-prev:hover {
+            background: #d0d0d0;
+        }
+
+        .results-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 20px 0;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            display: none;
+        }
+
+        .results-container.active {
+            display: block;
+        }
+
+        .score-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 30px auto;
+            font-size: 3rem;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .score-label {
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .score-message {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        .gap-analysis {
+            margin: 30px 0;
+        }
+
+        .gap-category {
+            background: #fff;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .gap-category h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .gap-score {
+            font-size: 0.9rem;
+            background: #f8f9fa;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: normal;
+        }
+
+        .product-recs {
+            display: grid;
+            gap: 15px;
+        }
+
+        .product {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .product-info {
+            flex: 1;
+        }
+
+        .product-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .product-price {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .product-btn {
+            background: #ff6b6b;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+
+        .product-btn:hover {
+            background: #ee5a52;
+            transform: scale(1.05);
+        }
+
+        .email-capture {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .email-capture h3 {
+            margin-bottom: 15px;
+        }
+
+        .email-form {
+            display: flex;
+            gap: 10px;
+            max-width: 500px;
+            margin: 20px auto 0;
+        }
+
+        .email-form input {
+            flex: 1;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .email-form button {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .email-form button:hover {
+            background: #ee5a52;
+        }
+
+        .social-share {
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .share-btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .share-twitter {
+            background: #1da1f2;
+        }
+
+        .share-facebook {
+            background: #1877f2;
+        }
+
+        .share-reddit {
+            background: #ff4500;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero, .quiz-container, .results-container {
+                padding: 20px;
+            }
+
+            .email-form {
+                flex-direction: column;
+            }
+
+            .share-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero/Landing -->
+        <div class="hero" id="hero">
+            <h1>🚨 Are You Ready for an Emergency?</h1>
+            <p class="subtitle">Take the 5-minute quiz and discover your preparedness gaps</p>
+            
+            <div class="stat-highlight">
+                <strong>Only 23% of Americans</strong> are prepared for a 3-day emergency according to FEMA. Are you one of them?
+            </div>
+
+            <button class="cta-button" onclick="startQuiz()">Start Quiz Now →</button>
+
+            <p style="margin-top: 20px; color: #666; font-size: 0.9rem;">
+                ✓ Free • ✓ No sign-up required • ✓ 5 minutes
+            </p>
+        </div>
+
+        <!-- Quiz Interface -->
+        <div class="quiz-container" id="quizContainer">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+
+            <div class="question" id="questionContainer">
+                <!-- Question content injected by JavaScript -->
+            </div>
+
+            <div class="nav-buttons">
+                <button class="btn btn-prev" id="prevBtn" onclick="prevQuestion()" style="display: none;">← Previous</button>
+                <button class="btn btn-next" id="nextBtn" onclick="nextQuestion()" disabled>Next →</button>
+            </div>
+        </div>
+
+        <!-- Results -->
+        <div class="results-container" id="resultsContainer">
+            <h2 style="text-align: center; margin-bottom: 20px;">Your Disaster Preparedness Score</h2>
+            
+            <div class="score-circle" id="scoreCircle">
+                <span id="scoreText">0%</span>
+            </div>
+
+            <div class="score-label" id="scoreLabel"></div>
+            <div class="score-message" id="scoreMessage"></div>
+
+            <!-- Email Capture -->
+            <div class="email-capture">
+                <h3>📥 Get Your Free Preparedness Checklist</h3>
+                <p>Enter your email to receive a personalized emergency supply checklist and exclusive prep tips</p>
+                <form class="email-form" onsubmit="submitEmail(event)">
+                    <input type="email" placeholder="your@email.com" required id="emailInput">
+                    <button type="submit">Get Checklist</button>
+                </form>
+            </div>
+
+            <!-- Gap Analysis & Product Recommendations -->
+            <div class="gap-analysis" id="gapAnalysis">
+                <!-- Dynamically populated -->
+            </div>
+
+            <!-- Social Sharing -->
+            <div class="social-share">
+                <h3>Share Your Results</h3>
+                <div class="share-buttons">
+                    <a href="#" class="share-btn share-twitter" id="shareTwitter" target="_blank">Share on Twitter</a>
+                    <a href="#" class="share-btn share-facebook" id="shareFacebook" target="_blank">Share on Facebook</a>
+                    <a href="#" class="share-btn share-reddit" id="shareReddit" target="_blank">Share on Reddit</a>
+                </div>
+            </div>
+
+            <button class="cta-button" onclick="resetQuiz()" style="margin-top: 30px;">Take Quiz Again</button>
+        </div>
+    </div>
+
+    <script>
+        let quizData = null;
+        let currentQuestion = 0;
+        let answers = [];
+
+        // Load quiz data
+        fetch('disaster-prep-quiz.json')
+            .then(response => response.json())
+            .then(data => {
+                quizData = data;
+            });
+
+        function startQuiz() {
+            document.getElementById('hero').style.display = 'none';
+            document.getElementById('quizContainer').classList.add('active');
+            currentQuestion = 0;
+            answers = new Array(quizData.questions.length).fill(null);
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const question = quizData.questions[currentQuestion];
+            const container = document.getElementById('questionContainer');
+            
+            // Update progress
+            const progress = ((currentQuestion + 1) / quizData.questions.length) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+
+            // Render question
+            container.innerHTML = `
+                <div class="question-category">${question.category} (Question ${currentQuestion + 1}/${quizData.questions.length})</div>
+                <div class="question-text">${question.question}</div>
+                <div class="choices">
+                    ${question.choices.map((choice, idx) => `
+                        <div class="choice ${answers[currentQuestion] === idx ? 'selected' : ''}" 
+                             onclick="selectChoice(${idx})">
+                            ${choice}
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+
+            // Update buttons
+            document.getElementById('prevBtn').style.display = currentQuestion > 0 ? 'block' : 'none';
+            document.getElementById('nextBtn').textContent = 
+                currentQuestion === quizData.questions.length - 1 ? 'See Results →' : 'Next →';
+            document.getElementById('nextBtn').disabled = answers[currentQuestion] === null;
+        }
+
+        function selectChoice(choiceIdx) {
+            answers[currentQuestion] = choiceIdx;
+            document.getElementById('nextBtn').disabled = false;
+            showQuestion(); // Re-render to show selection
+        }
+
+        function prevQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                showQuestion();
+            }
+        }
+
+        function nextQuestion() {
+            if (currentQuestion < quizData.questions.length - 1) {
+                currentQuestion++;
+                showQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function calculateScore() {
+            let totalPoints = 0;
+            const maxPoints = quizData.questions.length * 3; // 3 points per correct answer
+
+            answers.forEach((answer, idx) => {
+                const question = quizData.questions[idx];
+                // Score: 3 for best answer, 2 for second, 1 for third, 0 for worst
+                const points = Math.max(0, 3 - answer);
+                totalPoints += points;
+            });
+
+            return Math.round((totalPoints / maxPoints) * 100);
+        }
+
+        function getScoreRange(score) {
+            return quizData.scoring.ranges.find(range => 
+                score >= range.min && score <= range.max
+            );
+        }
+
+        function analyzeGaps() {
+            const categories = {};
+            
+            quizData.questions.forEach((question, idx) => {
+                const category = question.category;
+                if (!categories[category]) {
+                    categories[category] = { questions: [], answered: [] };
+                }
+                categories[category].questions.push(question);
+                categories[category].answered.push(answers[idx]);
+            });
+
+            return Object.entries(categories).map(([name, data]) => {
+                const score = data.answered.reduce((sum, answer) => 
+                    sum + Math.max(0, 3 - answer), 0);
+                const maxScore = data.questions.length * 3;
+                const percentage = Math.round((score / maxScore) * 100);
+
+                // Get products from questions where they didn't answer optimally
+                const needsImprovement = data.questions.filter((q, idx) => 
+                    data.answered[idx] > 0 && q.products
+                );
+                
+                return {
+                    name,
+                    score: percentage,
+                    products: needsImprovement.flatMap(q => q.products || [])
+                };
+            }).sort((a, b) => a.score - b.score);
+        }
+
+        function showResults() {
+            document.getElementById('quizContainer').classList.remove('active');
+            document.getElementById('resultsContainer').classList.add('active');
+
+            const score = calculateScore();
+            const scoreRange = getScoreRange(score);
+            const gaps = analyzeGaps();
+
+            // Update score display
+            document.getElementById('scoreText').textContent = score + '%';
+            document.getElementById('scoreCircle').style.background = scoreRange.color;
+            document.getElementById('scoreLabel').textContent = scoreRange.label;
+            document.getElementById('scoreLabel').style.color = scoreRange.color;
+            document.getElementById('scoreMessage').textContent = scoreRange.message;
+
+            // Update social share links
+            const shareText = `I scored ${score}% on the Disaster Preparedness Quiz! Are you ready for an emergency?`;
+            const shareUrl = window.location.href;
+            document.getElementById('shareTwitter').href = 
+                `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
+            document.getElementById('shareFacebook').href = 
+                `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
+            document.getElementById('shareReddit').href = 
+                `https://reddit.com/submit?url=${encodeURIComponent(shareUrl)}&title=${encodeURIComponent(shareText)}`;
+
+            // Show gap analysis
+            const gapHTML = gaps.map(gap => `
+                <div class="gap-category">
+                    <h3>
+                        ${gap.name}
+                        <span class="gap-score">${gap.score}% ready</span>
+                    </h3>
+                    ${gap.score < 75 && gap.products.length > 0 ? `
+                        <p style="margin-bottom: 15px; color: #666;">Recommended products to fill this gap:</p>
+                        <div class="product-recs">
+                            ${gap.products.slice(0, 3).map(product => `
+                                <div class="product">
+                                    <div class="product-info">
+                                        <div class="product-name">${product.name}</div>
+                                        <div class="product-price">${product.price}</div>
+                                    </div>
+                                    <a href="${product.amazonUrl}?tag=YOUR-AFFILIATE-ID" 
+                                       class="product-btn" 
+                                       target="_blank" 
+                                       rel="nofollow">View on Amazon</a>
+                                </div>
+                            `).join('')}
+                        </div>
+                    ` : `
+                        <p style="color: #4caf50;">✅ You're well-prepared in this area!</p>
+                    `}
+                </div>
+            `).join('');
+
+            document.getElementById('gapAnalysis').innerHTML = gapHTML;
+
+            // Scroll to top of results
+            document.getElementById('resultsContainer').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function submitEmail(event) {
+            event.preventDefault();
+            const email = document.getElementById('emailInput').value;
+            
+            // TODO: Integrate with email service (Mailchimp, ConvertKit, etc.)
+            console.log('Email submitted:', email);
+            
+            alert('Thanks! Check your email for your personalized preparedness checklist.');
+            document.getElementById('emailInput').value = '';
+        }
+
+        function resetQuiz() {
+            document.getElementById('resultsContainer').classList.remove('active');
+            document.getElementById('hero').style.display = 'block';
+            currentQuestion = 0;
+            answers = [];
+        }
+    </script>
+</body>
+</html>
